@@ -47,7 +47,7 @@ input[type="number"] {
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    color: white;
+    color: rgb(26, 15, 15);
 }
 
 button {

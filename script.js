@@ -75,7 +75,21 @@ function altaAlumno() {
         alert('Por favor ingresa nombre, apellidos y edad válida.');
     }
 }
-
+// Función para eliminar un alumno
+function eliminarAlumno() {
+    let nombreAlumno = prompt('Ingrese el nombre del alumno a eliminar:');
+    if (nombreAlumno) {
+        let indice = alumnos.findIndex(alumno => alumno.nombre.toLowerCase() === nombreAlumno.toLowerCase());
+        if (indice !== -1) {
+            alumnos.splice(indice, 1); // Eliminar el alumno del array
+            guardarDatosEnLocalStorage(); // Guardar cambios en localStorage
+            console.log('Alumno eliminado:', nombreAlumno);
+            actualizarOperaciones(); // Actualizar la lista de operaciones
+        } else {
+            alert('Alumno no encontrado.');
+        }
+    }
+}
 //asignar calificaciones a un alumno
 function asignarCalificaciones() {
     let nombreAlumno = prompt('Ingrese el nombre del alumno para asignar calificaciones:');
@@ -153,6 +167,7 @@ function actualizarOperaciones() {
     let operacionesDiv = document.getElementById('operaciones');
     operacionesDiv.innerHTML = ''; // Limpiar contenido anterior
 
+
     // Botones de operaciones
     operacionesDiv.innerHTML += `
         <h2>Operaciones</h2>
@@ -166,6 +181,7 @@ function actualizarOperaciones() {
         <button onclick="ordenarPorCalificacion('asc')">Ordenar por Calificación Ascendente</button>
         <button onclick="ordenarPorCalificacion('desc')">Ordenar por Calificación Descendente</button>
         <button onclick="mostrarCalificaciones()">Mostrar Calificaciones</button>
+        <button onclick="eliminarAlumno()">Eliminar Alumno</button>
     `;
 
     // División para mostrar resultados
