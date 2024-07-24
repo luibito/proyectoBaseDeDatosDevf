@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Alumnos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestión de Alumnos</h1>
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" required>
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" required>
+            <button type="button" onclick="altaAlumno()">Dar de Alta Alumno</button>
+        </form>
+        <div id="operaciones"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
